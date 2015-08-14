@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> Trivia </title>
+
+    <base href="../">
+
+    <!-- Less File -->
+    <link rel="stylesheet/less" type="text/css" href="assets/css/main.less" />
+
+    <!-- jquery.js -->
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+    <!-- addcssjs file -->
+    <script src="assets/js/addcssjs.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.corm/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="container container1 media-pad-zero ">
+        <div class="container-960  ">
+            <div class="row box1 padding-zero">
+                <div class=" col-xs-8 col-xs-offset-2 text-center choose-fonts text-center">
+                    <h1>CHOOSE WHAT TO PLAY !</h1>
+                    <br>
+                    <h4 class=" ">Choose the character you want</h4>
+                    <br>
+                </div>
+                <div class=" col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center padding-zero ">
+
+                    <div class="col-sm-12  padding-zero  ">
+                        <div class="col-xs-4 btn-character-image padding-zero">
+                            <a class="btn btn-choose-character " onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="green"><span class="hide select-character">Science</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" />
+                                <img class="image-al-media " src="assets/images/character-al.png" class="img-rounded" /></a>
+
+                        </div>
+                        <div class="col-xs-4 btn-character-image  padding-zero">
+                            <a class="btn btn-choose-character" onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="orange"><span class="hide select-character">Sports</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-bonzo-media" src="assets/images/character-bonzo.png" class="img-rounded" /></a>
+                        </div>
+                        <div class="col-xs-4 btn-character-image  padding-zero">
+                            <a class="btn btn-choose-character" onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="yellow"><span class="hide select-character">History</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-hector-media" src="assets/images/character-hector.png" class="img-rounded" /></a>
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <br>
+                    <div class="col-xs-12  marg-t10 text-center padding-zero charcter-row-1media marg-b10">
+                        <div class="col-xs-4  btn-character-image padding-zero">
+                            <a class="btn btn-choose-character" onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="pink"><span class="hide select-character">Entertainment</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-pop-media" src="assets/images/character-pop.png" class="img-rounded" /></a>
+                        </div>
+                        <div class="col-xs-4  btn-character-image  padding-zero">
+                            <a class="btn btn-choose-character" onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="red"><span class="hide select-character">Arts</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-tina-media" src="assets/images/character-tina.png" class="img-rounded" /></a>
+                        </div>
+                        <div class="col-xs-4  btn-character-image  padding-zero">
+                            <a class="btn btn-choose-character" onclick="clicksound.playclip()">
+                                <div class="text-box">
+                                    <h5 class="blue"><span class="hide select-character">Geography</span></h5>
+                                </div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-tito-media" src="assets/images/character-tito.png" class="img-rounded" /></a>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+
+                <div class="col-xs-12  margin-t20 ">
+                    <div class="col-sm-8 col-sm-offset-2">
+
+                        <a href="#" class="btn btn-bold btn-playnow btn-block " onclick="clicksound.playclip()"><img src="assets/icons/play.svg" />&nbsp; Play </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //$("button").click(function() {
+        //	$("h1, h2, p").addClass("blue");
+        //	$("div").addClass("important");
+        //});
+        //$(".thumbnail a").click(function() {
+        //	$("div.demo-container").html("<h4>Arts</h4>");
+        //});
+    </script>
+    <script>
+        $(document).ready(function() {
+            //$(" .bb").click(function() {
+            //$(img).css("border", "1px", "solid", "yellow");
+            //$(".tick1 img").show();
+            //$(".tick2 img").hide();
+            //$( ".tick1 img" ).removeClass( ".tick1" ).addClass( ".tick2" );
+            //});
+            $(".btn-character-image").click(function() {
+                $(".select-character").hide();
+                $(this).find(".select-character").show();
+                $(this).find(".select-character").removeClass("hide");
+            });
+        });
+    </script>
+</body>
+
+</html>

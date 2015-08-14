@@ -1,0 +1,1831 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#image1").click(function() {
+            if ($("#image1").attr("src") == "assets/icons/sound.svg") {
+                $("#image1").attr("src", "assets/icons/sound-mute.svg");
+            } else {
+                $("#image1").attr("src", "assets/icons/sound.svg");
+            }
+        });
+        $("#image2").click(function() {
+
+            if ($("#image2").attr("src") == "assets/icons/sound.svg") {
+                $("#image2").attr("src", "assets/icons/sound-mute.svg");
+
+            } else {
+                $("#image2").attr("src", "assets/icons/sound.svg");
+
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $("#flip").click(function() {
+            $("#panel").slideToggle("fast");
+        });
+    });
+</script>
+<script>
+    $(function() {
+
+        $('.toggle').click(function(event) {
+            event.preventDefault();
+            var target = $(this).attr('href');
+            $(target).toggleClass('hidden show');
+        });
+
+    });
+</script>
+
+<div class="row  padding-zero">
+
+    <!-- header for mobile devices -->
+    <div class="col-xs-12 padding-zero text-center hidden-lg hidden-md hidden-sm header-color">
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a href="view/dashboard.html" onclick="clicksound.playclip()" class="text-center"><img src="assets/icons/home.svg"></a>
+        </div>
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a onclick="clicksound.playclip()" data-toggle="modal" data-target=".bs-example-modal-lg2" class="cursor text-center"><img src="assets/icons/profile.svg"></a>
+        </div>
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a onclick="clicksound.playclip()" data-toggle="modal" data-target="#achievementModal" href="#" class="text-center"><img src="assets/icons/achievements.svg"></a>
+        </div>
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a onclick="clicksound.playclip()" data-toggle="modal" data-target="#participate" class="cursor text-center"><img src="assets/icons/ranking.svg"></a>
+        </div>
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a onclick="clicksound.playclip()" data-toggle="modal" data-target="#message" href="#" class="text-center"><img src="assets/icons/inbox.svg"></a>
+        </div>
+        <div class=" col-xs-2 icon-box padding-zero">
+            <a onclick="clicksound.playclip()" class="cursor text-center"><img id="image1" src="assets/icons/sound.svg"></a>
+        </div>
+
+    </div>
+    <!-- / mobile header --->
+    <!-- for tabs and desktop -->
+
+    <div class="col-xs-12 padding-zero hidden-xs header-white">
+        <div class="col-sm-4 text-center padding-zero  ">
+            <img class=" margin-t5 " src="assets/images/trivia-logo.png" />
+        </div>
+        <div class=" col-sm-4  ">
+            <div class="col-xs-3  text-right padding-zero">
+                <img data-toggle="modal" data-target=".bs-example-modal-lg2" data-toggle="modal" data-target=".bs-example-modal-lg2" class="user-pic cursor media-object " src="assets/images/profilepic.png">
+            </div>
+            <div class="col-xs-9 text-left padding-l-zero margin-t5 profile-user-name ">
+                <ul class="padding-l10">
+                    <li>
+                        <a data-toggle="modal" data-target=".bs-example-modal-lg2" class="cursor name">paradata</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target=".bs-example-modal-lg2" class="cursor email">@paradata</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4  padding-zero">
+            <div class="header-btn text-center  margin-t5">
+                <button onclick="clicksound.playclip()" data-toggle="modal" data-target="#achievementModal" href="#" class="btn btn-aqua">
+                    <img src="assets/icons/achievements.svg" />
+                </button>
+                <button onclick="clicksound.playclip()" class="btn btn-aqua participate" data-toggle="modal" data-target="#participate">
+                    <img src="assets/icons/ranking.svg" />
+                </button>
+                <button onclick="clicksound.playclip()" data-toggle="modal" data-target="#message" href="#" class="btn btn-aqua">
+                    <img src="assets/icons/inbox.svg" />
+                </button>
+                <button class="btn btn-aqua">
+                    <img id="image2" src="assets/icons/sound.svg" />
+                </button>
+            </div>
+            <!--<div class="header-btn text-center  margin-t5" >
+			<a href="#" class="btn btn-aqua"> <img src="assets/icons/achievements.svg"/> </a>
+			<a href="#" class="btn btn-aqua " data-toggle="modal" data-target="#participate"><span><i class=" fa fa-trophy fa-lg"></i></span></a>
+
+			<a href=""><span class="btn btn-aqua  "><i class=" fa fa-inbox fa-lg"></i></span></a>
+			<a  class="btn btn-aqua"><img src="assets/icons/vol.svg" id="image2" /></a>
+			</div> -->
+        </div>
+    </div>
+    <!-- / header tab and desktop -->
+</div>
+<!-- / row -->
+<!-- my profile modal -->
+<div class="modal  fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel ">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content  ">
+            <div class="panel panel-info profile-gray ">
+                <div class="panel-heading profileHeading ">
+                    <h1 class="panel-title text-center">PROFILE</h1>
+                    <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose" data-dismiss="modal" aria-hidden="true">
+                        <a href="#" class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+                    </button>
+                </div>
+                <div class="col-xs-12 text-right hidden-lg hidden-md hidden-sm marg-lt-neg4020">
+                    <a href="#" class=""> <img src="assets/icons/share.svg" /></a>
+                </div>
+                <div class="col-xs-12 text-right hidden-xs marg-lt-neg4020">
+                    <a href="#" onclick="clicksound.playclip()">
+                        <h4 class="white">Share</h4></a>
+                </div>
+                <div class=" mCustomScrollbar border-aqua modal-scroll" data-mcs-theme="3d-thick">
+                    <div id="scrollbar2">
+                        <div class=" panel-body padding-r-zero">
+                            <div class="media">
+                                <div class="col-sm-12 margin-tb40 padding-zero">
+
+                                    <div class="col-sm-12 hidden-lg hidden-md hidden-sm padding-zero">
+                                        <div class="col-xs-7 badge-position3 ">
+                                            <a href="#"> <img class="media-mobile-profile margin15 media-object " src="assets/images/profilepic.png" alt="..."> <span class=" badge">2</span> </a>
+                                        </div>
+                                        <div class="col-xs-5 text-right">
+                                            <a onclick="clicksound.playclip()" class="btn btn-default text-right padding-zero btn-edit-width" data-toggle="modal" data-target=".editModal "><img src="assets/icons/edit-inverse.svg" />
+                                                <br> Edit
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="hidden-xs col-sm-2 badge-position2 ">
+                                        <a href="#"> <img class=" media-mobile-profile margin15 media-object " src="assets/images/profilepic.png" alt="..."> <span class=" badge">2</span> </a>
+                                    </div>
+
+                                    <!-- for large device-->
+                                    <div class="col-sm-10  hidden-xs ">
+                                        <div class="col-xs-8 marginTop  ">
+                                            <h4 class="media-heading name">Jamie Oliver</h4>
+                                            <h5 class="media-heading email">jamie@oliver</h5>
+                                            <h5 class="media-heading">Last round a minute ago</h5>
+                                        </div>
+                                        <div class=" media-padding-profile col-xs-4 marginTop padding-r-zero text-right">
+                                            <a class="btn btn-default width-edit" data-toggle="modal" data-target=".editModal"><img src="assets/icons/edit-inverse.svg" />
+                                                <br> Edit
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /for large device-->
+
+                                    <div class="clearfix"></div>
+
+                                    <div class=" col-sm-12 hidden-lg hidden-md hidden-sm margin-t20">
+                                        <div class="col-xs-12 padding-l-zero">
+                                            <div class=" marginTop ">
+                                                <h4 class="media-heading">jamie oliver</h4>
+                                                <h5 class="media-heading">jamie@oliver</h5>
+                                                <h5 class="media-heading">Last round a minute ago</h5>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="col-sm-12 margin-t5 media-pad-zero">
+                                    <div class=" col-sm-6 media-layout media-pad-zero">
+                                        <div class="panel panel-blue">
+                                            <div class="panel-heading">
+                                                <h3 class=" panel-title">Level 4</h3>
+                                            </div>
+                                            <div class="panel-body pad-bot-zero">
+                                                <div class="col-xs-3 padding-zero levelup-image-width">
+                                                    <img src="assets/images/level_up_01.png">
+                                                </div>
+                                                <div class="col-xs-9  ">
+                                                    <h6 class="text-center">You have answered 12 questions correctly</h6>
+
+                                                    <h5 class="text-center">progress</h5>
+                                                    <div class="progress prg-height3 ">
+                                                        <div class="progress-bar progress-bar-success bar-width5"></div>
+                                                    </div>
+                                                    <div class="text-center margin-t-neg45">
+                                                        <h4 class="white">90%</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 media-layout media-pad-zero">
+                                        <div class="panel panel-blue ">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Performance</h3>
+                                            </div>
+                                            <div class="panel-body  text-center">
+                                                <div class=" col-xs-12 margin-media2 padding-zero marg-l-neg10">
+                                                    <div class=" col-xs-4 padding-zero">
+                                                        <p class="profile-font2 green">
+                                                            0
+                                                        </p>
+                                                    </div>
+                                                    <div class=" col-xs-4 padding-zero">
+                                                        <p class=" profile-font2 orange">
+                                                            20
+                                                        </p>
+                                                    </div>
+                                                    <div class=" col-xs-4 padding-zero">
+                                                        <p class="profile-font2 red">
+                                                            100%
+                                                        </p>
+                                                    </div>
+                                                    <div class=" col-xs-12 text-center margin-media3 padding-zero marg-t12 ">
+                                                        <div class=" col-xs-4 text-center padding-zero ">
+                                                            <p>
+                                                                Won
+                                                            </p>
+                                                        </div>
+                                                        <div class=" col-xs-4 text-center padding-zero">
+                                                            <p>
+                                                                Lost
+                                                            </p>
+                                                        </div>
+                                                        <div class=" col-xs-4 text-center padding-zero ">
+                                                            <p>
+                                                                Resigned
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 media-pad-zero">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading ">
+                                                <h3 class="panel-title ">Category Performance</h3>
+                                            </div>
+                                            <div class="panel-body text-center margintbZero subject-font box-image">
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        GEOGRAPHY
+                                                    </p>
+                                                    <img class="  " src="assets/images/character-al.png" alt="geography">
+                                                    <h1 class="margintbZero profile-font blue">50%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        SCIENCE
+                                                    </p>
+                                                    <img class="  " src="assets/images/character-bonzo.png" alt="SCIENCE">
+                                                    <h1 class="margintbZero profile-font green">50%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        HISTORY
+                                                    </p>
+                                                    <img class="  " src="assets/images/character-hector.png" alt="HISTORY">
+                                                    <h1 class="margintbZero profile-font yellow">0%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        SPORTS
+                                                    </p>
+                                                    <img class="  " src="assets/images/character-pop.png" alt="SPORTS">
+                                                    <h1 class="margintbZero profile-font orange">0%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        ART
+                                                    </p>
+                                                    <img class="  " src="assets/images/character-tina.png" alt="ART">
+                                                    <h1 class="margintbZero profile-font red">0%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                                <div class="border-subject col-sm-2 text-center padding-zero">
+                                                    <p>
+                                                        ENTERTAINMENT
+                                                    </p>
+                                                    <img class="box-tito  " src="assets/images/character-tito.png" alt="ART">
+                                                    <h1 class="margintbZero profile-font pink">0%</h1>
+                                                    <h6>Questions: 0</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-danger">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Weekly ranking</h3>
+                                            </div>
+                                            <div class="panel-body ">
+                                                <div class="border-subject padding-zero col-sm-4 text-center">
+                                                    <p>
+                                                        1ST PLACE
+                                                    </p>
+                                                    <img class=" " src="assets/images/trophy-1.png" alt="...">
+                                                    <h5 class="">Won <span class="pinkBadge ">0</span></h5>
+                                                </div>
+                                                <div class="border-subject padding-zero col-sm-4 text-center">
+                                                    <p>
+                                                        2ND PLACE
+                                                    </p>
+                                                    <img class="  " src="assets/images/trophy-2.png" alt="...">
+                                                    <h5 class="">Won <span class="pinkBadge ">0</span></h5>
+                                                </div>
+                                                <div class="border-subject padding-zero col-sm-4 text-center">
+                                                    <p>
+                                                        3RD PLACE
+                                                    </p>
+                                                    <img class="  " src="assets/images/trophy-3.png" alt="...">
+                                                    <h5 class="">Won <span class="pinkBadge ">0</span></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /category panel -->
+                                    <div class="">
+                                        <div class="col-sm-6 media-pad-zero mar marg-bottom-zero">
+                                            <div class="panel panel-blue ">
+                                                <div class="panel-heading subject-font height55">
+                                                    <h3 class="panel-title ">Challenge Performance</h3>
+                                                </div>
+                                                <div class="panel-body ">
+                                                    <div class="progress prg-height2">
+                                                        <div class="progress-bar progress-bar-success bar-width">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 progress-header ">
+                                                        <div class=" col-xs-6 text-left">
+                                                            <p class="white profile-font ">
+                                                                0
+                                                            </p>
+                                                        </div>
+                                                        <div class=" col-xs-6 text-right">
+                                                            <p class="white profile-font ">
+                                                                0
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <p>
+                                                            challenges played 0
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 media-pad-zero">
+                                            <div class="panel  panel-blue">
+                                                <div class="panel-heading subject-font height55">
+                                                    <h3 class="panel-title">Performance in friends challenge</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="progress prg-height2">
+                                                        <div class="progress-bar progress-bar-success bar-width">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 progress-header ">
+                                                        <div class=" col-xs-6 text-left">
+                                                            <p class="white profile-font ">
+                                                                0
+                                                            </p>
+                                                        </div>
+                                                        <div class=" col-xs-6 text-right">
+                                                            <p class="white profile-font ">
+                                                                0
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <p>
+                                                            Friends challenges played 2
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /profile modal -->
+
+<!-- edit modal -->
+<script>
+    $(function() {
+        $(".mynewclassclose").click(function() {
+            $(".editModal").modal("hide");
+        });
+    });
+</script>
+<!--edit profile modal  -->
+
+<div class="modal  editModal" tabindex="-9" role="dialog" aria-labelledby="myLargeModalLabel ">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-info profile-gray">
+                <div class="panel-heading profileHeading">
+                    <h1 class="panel-title text-center">SETTINGS</h1>
+                    <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose">
+                        <a class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+
+                    </button>
+                </div>
+                <div class="border-aqua">
+                    <div class=" mCustomScrollbar edit-media-scrollbar eidt-modal-scroll" data-mcs-theme="my-theme2">
+                        <div id="scrollbar3" class="">
+                            <div class="panel-body  col-xs-10 col-xs-offset-1 media-marg-editModal ">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Account</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="form-group text-left " style="margin-bottom:0;">
+                                                    <label for="inputEmail" class="col-lg-6 control-label text-left">Username</label>
+                                                    <div class="col-lg-6 ">
+                                                        <input type="text" class="form-control" id="inputEmail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 ">
+                                                    <div class="col-xs-12 line"></div>
+                                                </div>
+
+                                                <div class="form-group text-left " style="margin-bottom:0;">
+                                                    <label for="inputEmail" class="col-lg-6 control-label text-left">Email</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="inputEmail">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- panel account -->
+                                <div class="panel panel-success">
+                                    <div class="panel-heading panel-heading-green">
+                                        <h3 class="panel-title ">Change Password</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label for="inputEmail" class=" col-lg-6 control-label">Enter yourpassword</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="inputEmail">
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="col-xs-12 line "></div>
+                                                    </div>
+                                                    <label for="inputEmail" class="col-lg-6 control-label">Change your password</label>
+                                                    <div class="col-lg-6 ">
+                                                        <input type="text" class="form-control" id="inputEmail">
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="col-xs-12 line"></div>
+                                                    </div>
+                                                    <label for="inputEmail" class="col-lg-6 control-label">Repeat your password</label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="inputEmail">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- panel success -->
+                                <div class="panel panel-success ">
+                                    <div class="panel-heading  panel-prefer">
+                                        <h3 class="panel-title">Preferences</h3>
+                                    </div>
+                                    <div class="panel-body panel-nation">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label for="select" class=" col-lg-6 control-label">Nationality</label>
+                                                    <div class="col-lg-6 ">
+                                                        <div class=" nation-title"><a href="#credits" class="toggle ">Saint kitts and nevis<span class="text-right pull-right"> <img src="assets/icons/select-arrow.svg"/></span> 
+                                                        	</a>
+                                                        </div>
+                                                        <div id="credits" class="well hidden ">
+                                                            <div class=" mCustomScrollbar nation-box" data-mcs-theme="my-theme3">
+                                                                <div id="scrollbar4" class="">
+                                                                    <div>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>Saint kitts  and nevis</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                             <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href=""><span><img src="assets/images/country_af.png"/></span>America</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--<select class="form-control" id="select" style="height:30px !important;">
+																<option><span><img src="assets/images/us.png"/></span>America</option>
+																<option><span><img src="assets/images/us.png"/></span>America2</option>
+																<option><span><img src="assets/images/us.png"/></span>America3</option>
+																<option><span><img src="assets/images/us.png"/></span>America4</option>
+																<option><span><img src="assets/images/us.png"/></span>America5</option>
+																</select> -->
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- panel primary -->
+                                <div class="panel panel-success">
+                                    <div class="panel-heading panel-facebook">
+                                        <h3 class="panel-title">Facebook</h3>
+                                    </div>
+                                    <div class="panel-body media-font-panelFacebook">
+                                        <div class="col-xs-12 padding-zero">
+                                            <div class="col-xs-6 padding-zero">
+                                                <h5>Show my name</h5>
+                                            </div>
+                                            <div class="col-xs-5 col-xs-offset-1 padding-zero">
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                                                    <label for="cmn-toggle-1"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                                    <label for="cmn-toggle-4"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                                                    <label for="cmn-toggle-7" data-on="Yes" data-off="No"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12 line"></div>
+                                        </div>
+
+                                        <div class="col-xs-12 padding-zero margin-t5">
+                                            <div class="col-xs-6 padding-zero">
+                                                <h5>Show my picture</h5>
+                                            </div>
+                                            <div class="col-xs-5 col-xs-offset-1 padding-zero">
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                                                    <label for="cmn-toggle-2"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-5" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                                    <label for="cmn-toggle-5"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                                                    <label for="cmn-toggle-3" data-on="Yes" data-off="No"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-12 line"></div>
+                                        </div>
+                                        <div class="col-xs-12 padding-zero margin-t5">
+                                            <div class="col-xs-6 padding-zero">
+                                                <h5>Show my activity</h5>
+                                            </div>
+                                            <div class=" col-xs-5 col-xs-offset-1 padding-zero">
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-6" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                                                    <label for="cmn-toggle-6"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-8" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                                    <label for="cmn-toggle-8"></label>
+                                                </div>
+
+                                                <div class="switch text-right">
+                                                    <input id="cmn-toggle-9" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                                                    <label for="cmn-toggle-9" data-on="Yes" data-off="No"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- panel primary -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel-body btn-signout-save ">
+                        <div class="col-xs-8  col-xs-offset-2 text-center padding-all-zero">
+                            <div class="col-xs-6 padding-l-zero text-center" onclick="logout()" id="logout">
+                                <button class="btn btn-signout btn-block btn-lg padding-l-zero padding-r-zero">Sign Out</button>
+                            </div>
+                            <div class="col-xs-6 padding-r-zero text-center">
+                                <button class="btn btn-newgame btn-block btn-lg lg ">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- /profile modal -->
+
+<!--participate-->
+<script>
+    $(function() {
+        $(".participate").click(function() {
+            $("#participate").modal("show");
+        });
+    });
+</script>
+
+<div class="modal fade" id="participate">
+    <div class="modal-dialog">
+        <div class="modal-content modal-discard text-center">
+            <div class="modal-header">
+                <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose2" data-dismiss="modal" aria-hidden="true">
+                    <a class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+
+                </button>
+                <h4 class="text-black modal-title text-center margin-tb40">You need atleast 10 friends to participate in ranking.</h4>
+            </div>
+            <div class=" text-center margin-tb30">
+
+                <a href="#" class="btn btn-aqua">Invite Friends</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /participate -->
+
+<script>
+    (function($) {
+        $(window).load(function() {
+            $("#achieve-scroll").mCustomScrollbar();
+            $("#achieve-scroll").mCustomScrollbar("scrollTo", "bottom", {
+                scrollInertia: 90
+            });
+        });
+    })(jQuery);
+    $("#scrollbar2").mCustomScrollbar({
+        axis: "y" // vertical  scrollbar
+    });
+
+    //$("#scrollbar").mCustomScrollbar({ scrollInertia: 1 });
+</script>
+<!-- facebook link modal -->
+
+<div class="modal fade" id="facebook-link-modal">
+    <div class="modal-dialog">
+        <div class="modal-content modal-discard text-center">
+            <div class="modal-header">
+                <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose2" data-dismiss="modal" aria-hidden="true">
+                    <a class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+
+                </button>
+                <h4 class="text-black modal-title text-center margin-tb40">Link your account</h4>
+            </div>
+            <div class=" text-center margin-tb30">
+            	<div class=""><h6>Your Trivia Crack account is not linked to Facebook.Would you like to link it now?</h6></div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- facebook link modal -->
+<!--avhievement Modal-->
+
+<div class="modal fade" id="achievementModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
+            <div class="panel panel-info  ">
+                <div class="panel-heading profileHeading ">
+                    <h1 class="panel-title text-center">ACHIEVEMENTS</h1>
+                    <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose" data-dismiss="modal" aria-hidden="true">
+                        <a href="#" class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+                    </button>
+                </div>
+
+                <div class=" modal-body mCustomScrollbar border-aqua padding-all-zero " data-mcs-theme="my-theme" style="height:455px !important;">
+                    <div id="achieve-scroll  backg-white">
+                        <div class="">
+                            <div class=" padding-all-zero fonts-achieve margin-b20 ">
+                                <!-- image 1 -->
+                                <div class="col-xs-12 col-sm-4 col-md-3 text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position1 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-center">
+                                                Connecting People
+                                                <!--<span class=" coin" ><img src="assets/images/coin.svg"/>25</span> -->
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box  ">
+                                            <div class="progress hide">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ image 1 -->
+                                <!-- image 2 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position2 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left ">
+                                                Winner <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box ">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 2 -->
+                                <!-- image 3 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position3 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12 padding-all-zero marg-t100 ">
+                                        <div class="col-xs-12  margin-t5 ">
+                                            <p class="text-left">
+                                                Expert <span class=" coin "><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 3 -->
+                                <!-- image 4 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position4 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                King <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 4 -->
+                                <!-- image 5 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position5 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Emperor <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 5 -->
+                                <!-- image 6 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position6 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Master <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 6 -->
+                                <!-- image7 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position7 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Genius <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 7-->
+                                <!-- image 8 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position8 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Nerd <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 8 -->
+                                <!-- image 9 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position9 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="">
+                                                Professor <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 9 -->
+                                <!-- image 10 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position10 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="">
+                                                Unbeatable <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 10 -->
+                                <!-- image 11 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position11 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Graduate <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 11 -->
+                                <!-- image 12 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position12 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Smarty <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 12 -->
+                                <!-- image 13 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position13 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Sporty <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 13 -->
+                                <!-- image 14 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position14 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Coach <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 14 -->
+                                <!-- image 15 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position15 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Invictus <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 15 -->
+                                <!-- image 16 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position16 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Reader <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 16-->
+                                <!-- image 17 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position17 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Painter <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 17-->
+                                <!-- image 18 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position18 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Artist <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 18-->
+                                <!-- image 19 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position19 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Learner <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 19->
+								<!-- image 20 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position20 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Geek <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 20-->
+                                <!-- image 21 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position21 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Scientist <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 21-->
+                                <!-- image 22 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position22 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Historian <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 22-->
+                                <!-- image 23 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position23 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Archer <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 23-->
+                                <!-- image 24 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position24 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Knight <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 24-->
+                                <!-- image 25 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position25 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Tourist <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 25-->
+                                <!-- image 26 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position26 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Traveler <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 26-->
+                                <!-- image 27 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position27 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Globetrot.. <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 27-->
+                                <!-- image 28 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position28 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Entertainer <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 28-->
+                                <!-- image 29 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position29 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Famous <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 29-->
+                                <!-- image 30 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position30 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Rock star <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 30-->
+                                <!-- image 31 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position31 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Finisher <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 31-->
+                                <!-- image 32 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position32 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Sword ma.. <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 32-->
+                                <!-- image 33 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position33 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Fighter <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 33-->
+                                <!-- image 34 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position34 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Ninja <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 34-->
+                                <!-- image 35 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position35 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Author <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 35-->
+                                <!-- image 36 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position36 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Writer <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 36-->
+                                <!-- image 37 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position37 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Poet <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 37-->
+                                <!-- image 38 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position38 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Inventor <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 38-->
+                                <!-- image 39 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position39 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Bilingual <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 39-->
+                                <!-- image 40 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position40 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Translator <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 40-->
+                                <!-- image 41 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position41 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Polyglot <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 41-->
+                                <!-- image 42 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position42 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Interpreter <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 42-->
+                                <!-- image 43 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position43 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Notary <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 43-->
+                                <!-- image 44 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position44 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Judge <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 44-->
+                                <!-- image 45 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position45 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Magistrate <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 45-->
+                                <!-- image 46 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position46 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Consigliere <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 46-->
+                                <!-- image 47 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position47 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Ring anno.. <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 47-->
+                                <!-- image 48 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position48 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Spartan <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 48-->
+                                <!-- image 49 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position49 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Hercules <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 49-->
+                                <!-- image 50 -->
+                                <div class="col-xs-6 col-sm-4 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position50 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Zeus <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 50-->
+                                <!-- image 51 -->
+                                <div class="col-xs-6 col-sm-12 col-md-3  text-center padding-all-zero marg-t10">
+                                    <div class="col-xs-12 padding-all-zero text-center achieve-layout">
+                                        <img class="position51 clip-achieve " src="assets/images/sprite-actives-achiev.png" />
+                                    </div>
+                                    <div class="col-xs-12  padding-all-zero marg-t100">
+                                        <div class="col-xs-12  margin-t5">
+                                            <p class="text-left">
+                                                Titan <span class=" coin"><img src="assets/images/coin.svg"/>25</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-10 col-xs-offset-1 achieve-box">
+                                            <div class="progress ">
+                                                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /image 51-->
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!---no new message modal -->
+
+<div class="modal fade" id="message">
+    <div class="modal-dialog">
+        <div class=" modal-content modal-discard text-center">
+            <div class="modal-header modal-newMessage-layout">
+                <button type="button" onclick="clicksound.playclip()" class="close mynewclassclose2" data-dismiss="modal" aria-hidden="true">
+                    <a class="btn  btn-red"><img src="assets/icons/close-small.svg" /></a>
+
+                </button>
+
+                <h4 class=" modal-title text-center margin-tb40">You dont have new message !</h4>
+                <h5>Send spins or lives to your friends !</h5>
+                <div class="col-xs-12 message-modal-userpic padding-all-zero">
+                    <div class="col-xs-3 user ">
+                        <img class="user" src="assets/images/profilepic.png" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+
+                </div>
+                <div class="col-xs-12 message-modal-userpic padding-all-zero">
+                    <div class="col-xs-3 ">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+                    <div class="col-xs-3">
+                        <img src="assets/images/heart.svg" alt="userpic">
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 text-center margin-tb30 spin-life-img padding-all-zero">
+                    <div class="col-xs-6 ">
+                        <a href="#" class="btn btn-send-spin-life btn-block"> <span><img src="assets/images/spin-dude.png"/></span>Send spins</a>
+                    </div>
+                    <div class="col-xs-6 ">
+                        <a href="#" class="btn btn-send-spin-life btn-block"> <span><img src="assets/images/lives-dude-happy.png"/></span>Send lives</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---/ new message modal -->
+
+<script>
+    (function($) {
+        $(window).load(function() {
+            $("#scrollbar2").mCustomScrollbar();
+            $("#scrollbar2").mCustomScrollbar("scrollTo", "bottom", {
+                scrollInertia: 200
+            });
+        });
+    })(jQuery);
+    $("#scrollbar2").mCustomScrollbar({
+        axis: "yx" // vertical and horizontal scrollbar
+    });
+</script>
+<script>
+    (function($) {
+        $(window).load(function() {
+            $("#achieve-scroll").mCustomScrollbar();
+            $("#achieve-scroll").mCustomScrollbar("scrollTo", "bottom", {
+                scrollInertia: 200
+            });
+        });
+    })(jQuery);
+    $("#scrollbar3").mCustomScrollbar({
+        axis: "yx" // vertical and horizontal scrollbar
+    });
+</script>
+<script>
+    (function($) {
+        $(window).load(function() {
+            $("#achieve-scroll").mCustomScrollbar();
+            $("#achieve-scroll").mCustomScrollbar("scrollTo", "bottom", {
+                scrollInertia: 200
+            });
+        });
+    })(jQuery);
+    $("#scrollbar4").mCustomScrollbar({
+        axis: "yx" // vertical and horizontal scrollbar
+    });
+</script>

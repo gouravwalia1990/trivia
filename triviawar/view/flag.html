@@ -1,0 +1,49 @@
+
+	<head id ="flag">
+		<title>Custom SelectBox</title>
+			<base href="../">
+		<link rel="stylesheet" href="assets/css/jquery.jscrollpane.css" />
+		<link rel="stylesheet" href="assets/css/customSelectBox.css" />
+		<!-- example.css is throwaway code for demoing -->
+		<link rel="stylesheet" href="assets/css/example.css" />
+	</head>
+	<body class="noJS" id="example-1">
+		<script>
+			var bodyTag = document.getElementsByTagName("body")[0];
+				bodyTag.className = bodyTag.className.replace("noJS", "hasJS");
+		</script> 
+
+		
+		<select class="custom" name="countriesFlag">
+		  <option class="usa">USA</option>
+		  <option class="italy">Italy</option>
+		  <option class="france">France</option>
+		  <option class="germany">Germany</option>
+<option class="usa">USA</option>
+		  <option class="italy">Italy</option>
+		  <option class="france">France</option>
+		  <option class="germany">Germany</option>
+<option class="usa">USA</option>
+		  <option class="italy">Italy</option>
+		  <option class="france">France</option>
+		  <option class="germany">Germany</option>
+		</select>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<script src="assets/js/jScrollPane.js"></script>
+		<script src="assets/js/jquery.mousewheel.js"></script>
+		<script src="assets/js/SelectBox.js"></script>
+		<script>	
+			$(function() {
+				
+				$("select.custom").each(function() {					
+					var sb = new SelectBox({
+						selectbox: $(this),
+						height: 50,
+						width: 200
+					});
+				});
+				
+			});
+		</script>
+	</body>
