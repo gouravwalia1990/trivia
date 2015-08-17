@@ -96,11 +96,15 @@ loadjscssfile("assets/js/game.js", "js");
 
 loadjscssfile("assets/js/spin.js", "js");
 
+loadjscssfile("assets/js/jquery.custom-scrollbar.js", "js");
+
 loadjscssfile("assets/js/custom-scrollbar-js/jquery.mCustomScrollbar.concat.min.js", "js");
 
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css", "css");
 
 loadjscssfile("assets/css/jquery.mCustomScrollbar.css", "css");
+
+loadjscssfile("assets/css/jquery.custom-scrollbar.css", "css");
 
 $(function() {
 	Parse.initialize("YKhgseVvbcmoXniYoMbUp32y9aZONzwuOxFqSdDF", "RYW7xS5OxeB2XvNy8q39fMWmOxHg0Msm2eAKcHRm");
