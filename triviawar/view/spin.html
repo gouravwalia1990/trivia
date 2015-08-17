@@ -36,16 +36,17 @@
 	</head>
 
 	<body>
+
 		<div class="container container1">
 			<div class="container-960">
 				<div class="row box3 padding-zero">
 					<div class="col-xs-12" id="header"></div>
 					<div class=" col-sm-12 padding-zero">
 						<div class=" col-xs-12 newgamebox text-center">
-							<h2>Round 1/25</h2>
+							<h2>Round <span id='currentRound'>1</span>/25</h2>
 						</div>
 					</div>
-					<div class=" col-xs-12 padding-zero margin-t-neg45" >
+					<div class=" col-xs-12 padding-zero margin-t-neg45">
 						<div class=" col-xs-6 text-left " >
 							<a href="view/dashboard.html"><img src="assets/icons/left-arrow.svg"/></a>
 						</div>
@@ -53,164 +54,441 @@
 							<a href="view/dashboard.html"><img style="margin-top:-10px;" src="assets/images/chat.svg"/></a>
 						</div>
 					</div>
-					<div class=" col-xs-12 padding-zero margin-t20 text-center" >
-						<div class=" col-xs-10 col-xs-offset-1 text-center " >
-							<img src="assets/images/vs-panel.png" alt="vs-panel" class="clip pos-1 " style="margin-top:-150px;margin-left:48px;" />
-							<div class=" ">
-								<!--<div class="col-xs-6">
-								<div class="col-sm-6">
-								<div class="col-xs-4"><img class="user-pic2 cursor media-object " src="assets/images/profilepic.png" alt="user pic"  style="" />
-								</div>
-								<div class="col-xs-8">
-								<ul class="">
-								<li ><img style="margin-left: 80px;
-								margin-top: 60px;" class="vs-panel clip2 pos1" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 90px;
-								margin-top: 50px;" class="vs-panel clip2 pos2" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 90px;
-								margin-top: 55px;" class="vs-panel clip2 pos3" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 97px;
-								margin-top: 52px;" class="vs-panel clip2 pos4" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 110px;
-								margin-top: 52px;" class="vs-panel clip2 pos5" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 120px;
-								margin-top: 52px;" class="vs-panel clip2 pos6" src="assets/images/empty-characters.png" />
-								</li>
-								</ul>
-								</div>
-								</div>
-								</div>
-								<div class="col-xs-6">
-								<div class="col-sm-6">
-								<div class="col-xs-4"><img class="user-pic2 cursor media-object " src="assets/images/profilepic.png" alt="user pic"  style="" />
-								</div>
-								<div class="col-xs-8">
-								<ul class="">
-								<li ><img style="margin-left: 80px;
-								margin-top: 60px;" class="vs-panel clip2 pos1" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 90px;
-								margin-top: 50px;" class="vs-panel clip2 pos2" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 90px;
-								margin-top: 55px;" class="vs-panel clip2 pos3" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 97px;
-								margin-top: 52px;" class="vs-panel clip2 pos4" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 110px;
-								margin-top: 52px;" class="vs-panel clip2 pos5" src="assets/images/empty-characters.png" />
-								</li>
-								<li ><img style="margin-left: 120px;
-								margin-top: 52px;" class="vs-panel clip2 pos6" src="assets/images/empty-characters.png" />
-								</li>
-								</ul>
-								</div>
-								</div>
-								</div> -->
 
-								<img class="user-pic2 cursor media-object " src="assets/images/profilepic.png" alt="user pic"  style="" />
-								
-								<ul class="" style="list-style: none;">
-									<li ><img style="margin-left: 80px;
-										margin-top: 60px;" class="vs-panel clip2 pos1" src="assets/images/empty-characters.png" />
-									</li>
-									<li ><img style="margin-left: 90px;
-										margin-top: 50px;" class="vs-panel clip2 pos2" src="assets/images/empty-characters.png" />
-									</li>
-									<li ><img style="margin-left: 90px;
-										margin-top: 55px;" class="vs-panel clip2 pos3" src="assets/images/empty-characters.png" />
-									</li>
-									<li ><img style="margin-left: 97px;
-										margin-top: 52px;" class="vs-panel clip2 pos4" src="assets/images/empty-characters.png" />
-									</li>
-									<li ><img style="margin-left: 110px;
-										margin-top: 52px;" class="vs-panel clip2 pos5" src="assets/images/empty-characters.png" />
-									</li>
-									<li ><img style="margin-left: 120px;
-										margin-top: 52px;" class="vs-panel clip2 pos6" src="assets/images/empty-characters.png" />
-									</li>
-								</ul>
+					<div class=" col-xs-12 padding-zero margin-t20 text-center">
+
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="row" style="height: 130px;">
+								<img src="assets/images/vs-panel.png" alt="vs-panel" class="clip pos-1 img-responsive" style="margin-top:-150px;margin-left:48px;" />
+								<div class="col-xs-5 col-xs-offset-1" style="padding-top: 10px">
+									<span class="pull-left"> <img src="assets/images/profilepic.png" class="img-circle img-responsive" alt="Responsive image" style='height: 47px'> </span>
+									<span class="pull-left username paddingl5 text-info bold font-size-20 line-height-40"> </span>
+									<div class="col-xs-12 owner-character"></div>
+								</div>
+								<div class="col-xs-5" style="padding-top: 10px">
+									<span class="pull-right"> <img src="assets/images/profilepic.png" class="img-circle img-responsive" alt="Responsive image" style='height: 47px'> </span>
+									<span class="pull-right opponent-username paddingl5 white bold font-size-20 line-height-35"> Opponent </span>
+									<div class="col-xs-12 opponent-character"></div>
+								</div>
+
 							</div>
-
-							<!--<img src="assets/images/empty-characters.png" alt="vs-panel" class="vs-panel" style="" />-->
-
 						</div>
+
 					</div>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
+
 					<div class="col-sm-12 margin-tb30 ">
 						<div class="col-sm-offset-3 col-sm-6 col-sm-offset-3  ">
 							<div class="  ">
-								<img onclick="location.href='view/play.html'" src="assets/images/wheel.png"/>
-								<a href=""><img  src="assets/images/wheel-spin.png" style="position: absolute;
-								margin-top: -250px;
-								margin-left: 130px;"/></a>
-
-								<!-- spinner -->
-								<!-- <div id="wrapper">
-
-								<div id="wheel">
-								<div id="inner-wheel">
-								<div class="sec">
-								<span class="fa fa-bell-o"></span>
-								</div>
-								<div class="sec">
-								<span class="fa fa-comment-o"></span>
-								</div>
-								<div class="sec">
-								<span class="fa fa-smile-o"></span>
-								</div>
-								<div class="sec">
-								<span class="fa fa-heart-o"></span>
-								</div>
-								<div class="sec">
-								<span class="fa fa-star-o"></span>
-								</div>
-								<div class="sec">
-								<span class="fa fa-lightbulb-o"></span>
-								</div>
-								</div>
-
-								<div id="spin">
-								<div id="inner-spin"></div>
-								</div>
-
-								<div id="shine"></div>
-								</div>
-
-								</div> -->
-								<!-- /spinner -->
-
+								<img id="wheel" src="assets/images/wheel.png"/>
+								<a id="wheel-spin"> <!-- <img  src="assets/images/wheel-spin.png" style="position: absolute;margin-top: -250px;	margin-left: 130px;"/></a> -->
+								<button class="spin innerSpinner" onclick="wheelspin.playclip()">
+									<span class="spin-string" data-abjson="spin" id="spin">Spin</span>
+								</button> </a>
 							</div>
 							<div class="col-sm-offset-3 col-sm-6 col-sm-offset-3 margin-t40 ">
 								<img  src="assets/images/crown-meter-bg.png" style="margin-top:-20px;"/>
 								<img  src="assets/images/crown-meter-front.png" style="margin-top:-100px;margin-left:5px;"/>
 								<img  src="assets/images/icon-crown-meter.png" style="margin-top:-100px;margin-left: 69px;"/>
 								<img class="hide" src="assets/images/icon-crown-meter-full.png" style="margin-top:-140px;margin-left: 69px;"/>
-
 							</div>
 
 						</div>
 					</div>
+
 				</div>
 
 			</div>
 		</div>
+
+		<!--- START CHOOSE CHARACTER MODAL -->
+		<div class="modal fade" id="character-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<p>
+
+							<div class="row box1 padding-zero">
+								<div class="text-center choose-fonts text-center">
+									<h1>CHOOSE WHAT TO PLAY !</h1>
+									<br>
+									<h4 class=" ">Choose the character you want</h4>
+									<br>
+								</div>
+								<div class="text-center padding-zero ">
+
+									<div class="col-sm-12 padding-zero">
+
+										<div class="col-xs-4 btn-character-image btn-character-image1 padding-zero ch_science_unselected">
+											<a class="btn btn-choose-character " onclick="clicksound.playclip();selectCharacter('ch_science');">
+											<div class="text-box">
+												<h5 class="green"><span class="hide select-character">Science</span></h5>
+											</div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-al-media " src="assets/images/character-al.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4 btn-character-image padding-zero ch_science_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5><span class="green">Science</span></h5>
+											</div> <img class=" check-box-layout2" src="assets/images/check.png" /> <img class="image-al-media " src="assets/images/character-al.png" class="img-rounded" style="margin-top: 5px;" /></a>
+										</div>
+
+										<div class="col-xs-4 btn-character-image btn-character-image1 padding-zero ch_sports_unselected">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();selectCharacter('ch_sports');">
+											<div class="text-box">
+												<h5 class="orange"><span class="hide select-character">Sports</span></h5>
+											</div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-bonzo-media" src="assets/images/character-bonzo.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4 btn-character-image padding-zero ch_sports_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5 class="orange"><span>Sports</span></h5>
+											</div> <img class=" check-box-layout2" src="assets/images/check.png" /> <img class="image-bonzo-media" src="assets/images/character-bonzo.png" class="img-rounded" style="margin-top: 5px;" /></a>
+										</div>
+
+										<div class="col-xs-4 btn-character-image btn-character-image1 padding-zero ch_history_unselected">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();selectCharacter('ch_history');">
+											<div class="text-box">
+												<h5 class="yellow"><span class="hide select-character">History</span></h5>
+											</div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-hector-media" src="assets/images/character-hector.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4 btn-character-image padding-zero ch_history_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5 class="yellow"><span>History</span></h5>
+											</div> <img class=" check-box-layout2" src="assets/images/check.png" /> <img class="image-hector-media" src="assets/images/character-hector.png" class="img-rounded" /></a>
+										</div>
+
+									</div>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+
+									<br>
+									<div class="col-xs-12  marg-t10 text-center padding-zero charcter-row-1media marg-b10">
+
+										<div class="col-xs-4 btn-character-image btn-character-image1 padding-zero ch_entertainment_unselected">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();selectCharacter('ch_entertainment');">
+											<div class="text-box">
+												<h5 class="pink"><span class="hide select-character">Entertainment</span></h5>
+											</div> <img class="check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-pop-media" src="assets/images/character-pop.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4 btn-character-image padding-zero ch_entertainment_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5 class="pink"><span>Entertainment</span></h5>
+											</div> <img class="check-box-layout2" src="assets/images/check.png" /> <img class="image-pop-media" src="assets/images/character-pop.png" class="img-rounded" /></a>
+										</div>
+
+										<div class="col-xs-4 btn-character-image btn-character-image1 padding-zero ch_art_unselected">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();selectCharacter('ch_art');">
+											<div class="text-box">
+												<h5 class="red"><span class="hide select-character">Arts</span></h5>
+											</div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-tina-media" src="assets/images/character-tina.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4 btn-character-image padding-zero ch_art_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5 class="red"><span>Arts</span></h5>
+											</div> <img class=" check-box-layout2" src="assets/images/check.png" /> <img class="image-tina-media" src="assets/images/character-tina.png" class="img-rounded" /></a>
+										</div>
+
+										<div class="col-xs-4  btn-character-image btn-character-image1 padding-zero ch_geography_unselected">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();selectCharacter('ch_geography');">
+											<div class="text-box">
+												<h5 class="blue"><span class="hide select-character">Geography</span></h5>
+											</div> <img class=" check-box-layout2 select-character hide" src="assets/images/check.png" /> <img class="image-tito-media" src="assets/images/character-tito.png" class="img-rounded" /></a>
+										</div>
+										<div class="col-xs-4  btn-character-image padding-zero ch_geography_selected hide">
+											<a class="btn btn-choose-character" onclick="clicksound.playclip();">
+											<div class="text-box">
+												<h5 class="blue"><span>Geography</span></h5>
+											</div> <img class=" check-box-layout2" src="assets/images/check.png" /> <img class="image-tito-media" src="assets/images/character-tito.png" class="img-rounded" /></a>
+										</div>
+
+									</div>
+
+								</div>
+								<br>
+								<br>
+
+								<div class="col-xs-12  margin-t20 play-character-btn hide">
+									<div class="col-sm-8 col-sm-offset-2">
+										<a class="btn btn-bold btn-playnow btn-block " onclick="clicksound.playclip();addCurrentWord();"><img src="assets/icons/play.svg" />&nbsp; Play </a>
+									</div>
+								</div>
+							</div>
+						</p>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!--- END CHOOSE CHARACTER  MODAL -->
+
+		<!-- Script for navigating -->
+		<script type="text/javascript">
+			//$("#character-modal").modal("show");
+
+			var isSpinning = false;
+
+			RotDeg = 300;
+
+			var $rota = $('.innerSpinner'),
+			    degree = 0,
+			    clicked = false,
+			    timer,
+			    rotateCount = 0,
+			    currentword,
+			    selectcharacter;
+
+			var currentGameId = localStorage.getItem("currentGame");
+
+			$(function() {
+
+				$rota.on('click', function() {
+
+					clicksound.playclip();
+
+					clicked = true;
+					degree = 0;
+					rotateCount = Math.random();
+					rotate();
+					return false;
+				});
+
+				// charcter image select in modal
+				$(".btn-character-image1").click(function() {
+					$(".select-character").hide();
+					$(this).find(".select-character").show();
+					$(this).find(".select-character").removeClass("hide");
+
+					$(".play-character-btn").removeClass("hide");
+				});
+
+				initialGame();
+
+			});
+
+			/* initial game */
+			function initialGame() {
+
+				var GamePlayers = Parse.Object.extend("GamePlayers");
+				var query = new Parse.Query(GamePlayers);
+
+				query.equalTo("gameId", currentGameId);
+				query.equalTo("playerId", Parse.User.current().id);
+
+				query.first({
+
+					success : function(object) {
+
+						console.log("aaray of current Game :=" + JSON.stringify(object));
+						$("#currentRound").html(object.attributes.gameRound);
+
+						var str = '';
+
+						if (object.attributes.ch_entertainment == true) {
+							str += "<img src='assets/images/character-1.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_entertainment_unselected").addClass("hide");
+							$(".ch_entertainment_selected").removeClass("hide");
+						}
+
+						if (object.attributes.ch_art == true) {
+							str += "<img src='assets/images/character-2.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_art_unselected").addClass("hide");
+							$(".ch_art_selected").removeClass("hide");
+						}
+
+						if (object.attributes.ch_sports == true) {
+							str += "<img src='assets/images/character-3.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_sports_unselected").addClass("hide");
+							$(".ch_sports_selected").removeClass("hide");
+						}
+
+						if (object.attributes.ch_history == true) {
+							str += "<img src='assets/images/character-4.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_history_unselected").addClass("hide");
+							$(".ch_history_selected").removeClass("hide");
+						}
+
+						if (object.attributes.ch_science == true) {
+							str += "<img src='assets/images/character-5.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_science_unselected").addClass("hide");
+							$(".ch_science_selected").removeClass("hide");
+						}
+
+						if (object.attributes.ch_geography == true) {
+							str += "<img src='assets/images/character-6.png' class='img-responsive' style='height:40px;margin-right-10px;' />";
+
+							$(".ch_geography_unselected").addClass("hide");
+							$(".ch_geography_selected").removeClass("hide");
+						}
+
+						$(".owner-character").html(str);
+
+						//alert("object.attributes.currectAnswer :="+object.attributes.currectAnswer);
+						if (object.attributes.currectAnswer > 2) {
+							$("#character-modal").modal("show");
+						}
+						//alert(object.attributes.ch_count);
+						//alert(object.attributes.gameRound);
+
+					},
+					error : function(error) {
+
+						failResponse(error.message);
+
+					}
+				});
+
+			}
+
+			function rotate() {
+
+				if (clicked) {
+					$("#wheel").css({
+						transform : 'rotate(' + degree + 'deg)'
+					});
+				}
+
+				// timeout increase degrees:
+				if (degree < ((rotateCount * 500) + 1500)) {
+					timer = setTimeout(function() {
+						if (degree < 500) {
+							degree = degree + 4;
+						} else if (degree < 800) {
+							degree = degree + 5;
+						} else if (degree < 1200) {
+							degree = degree + 4;
+						} else if (degree < 1500) {
+							degree = degree + 2;
+						} else {
+							degree = degree + 1;
+						}
+						rotate();
+						// loop it
+					}, 1);
+
+				} else {
+					console.log("degree := " + degree);
+					var rem = degree % 360;
+					var characterImg;
+
+					if (rem < 25.7) {
+						currentword = "entertainment";
+						characterImg = "character-1.png";
+					} else if (rem < 77.1) {
+						currentword = "art";
+						characterImg = "character-2.png";
+					} else if (rem < 128.5) {
+						currentword = "sports";
+						characterImg = "character-3.png";
+					} else if (rem < 179.9) {
+						currentword = "history";
+						characterImg = "character-4.png";
+					} else if (rem < 231.3) {
+						currentword = "science";
+						characterImg = "character-5.png";
+					} else if (rem < 282.7) {
+						currentword = "geography";
+						characterImg = "character-6.png";
+					} else if (rem < 334.1) {
+						currentword = "crown";
+						characterImg = "icon-crown-meter-full.png";
+					} else {
+						currentword = "entertainment";
+						characterImg = "character-1.png";
+					}
+
+					if (currentword == "crown") {
+						$("#character-modal").modal("show");
+					} else {
+						addCurrentWord();
+					}
+
+				}
+
+			}
+
+			/* add selected character of modal after */
+			function selectCharacter(str) {
+
+				selectcharacter = str;
+
+				console.log("selectcharacter :=" + selectcharacter);
+
+			}
+
+			/* add current  word */
+			function addCurrentWord() {
+
+				var GamePlayers = Parse.Object.extend("GamePlayers");
+				var query = new Parse.Query(GamePlayers);
+
+				query.equalTo("gameId", currentGameId);
+				query.equalTo("playerId", Parse.User.current().id);
+
+				query.first({
+
+					success : function(object) {
+
+						//console.log("currentword :="+currentword);
+
+						//console.log("aaray of current Game :=" + JSON.stringify(object));
+
+						if (selectcharacter) {
+
+							object.set("currectAnswer", 3);
+							localStorage.setItem("selectcharacter", selectcharacter);
+							//object.set(selectcharacter, true);
+							//object.set("ch_count", (object.attributes.ch_count + 1));
+							$("#character-modal").modal("hide");
+
+						}
+
+						object.set("currentWord", currentword);
+						localStorage.setItem("currentWord", currentword);
+
+						object.save();
+
+						window.location = "view/sports.html";
+
+					},
+					error : function(error) {
+
+						failResponse(error.message);
+
+					}
+				});
+			}
+
+		</script>
+
+		<style>
+			.innerSpinner {
+				position: absolute;
+				margin-top: -250px;
+				margin-left: 130px;
+				height: 135px;
+				width: 120px;
+				background: url('assets/images/wheel-spin.png') no-repeat;
+				border: none;
+			}
+			.spin-string {
+				line-height: 135px;
+				font-size: 26px;
+				color: #7b7c7c;
+			}
+		</style>
+
 	</body>
 </html>

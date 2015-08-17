@@ -1,243 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+	<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> Trivia </title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> Trivia </title>
 
-    <base href="../">
+		<base href="../">
 
-    <!-- Less File -->
-    <link rel="stylesheet/less" type="text/css" href="assets/css/main.less" />
+		<!-- Less File -->
+		<link rel="stylesheet/less" type="text/css" href="assets/css/main.less" />
 
-    <!-- jquery.js -->
-    <script src="assets/js/jquery.js" type="text/javascript"></script>
+		<!-- jquery.js -->
+		<script src="assets/js/jquery.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-    <!-- addcssjs file -->
-    <script src="assets/js/addcssjs.js"></script>
+		<!-- addcssjs file -->
+		<script src="assets/js/addcssjs.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type='text/css'>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.corm/respond/1.4.2/respond.min.js"></script>
-		
+
 		<![endif]-->
 
-</head>
+	</head>
 
-<body>
-    <div class="container container1 ">
-        <div class="container-960  ">
-            <div class="row box3 padding-zero ">
-                <div class="col-xs-12" id="header"></div>
-                <div class="progress prg-height4">
-                    <div class="progress-bar progress-bar-warning bar-width4">
+	<body>
 
-                    </div>
-                </div>
+		<div class="container container1 ">
+			<div class="container-960">
+				<div class="col-xs-12 box3 padding-zero ">
+					<div class="col-xs-12" id="header"></div>
+					<div class="progress prg-height4" id="characterHeading">
+						<div class="progress-bar question-progress-width" id="overlay-progress">
 
-                <div class="col-xs-12 progress-header quiz-icon-box">
-                    <div class=" col-xs-2 text-left"><img src="assets/images/sport.png" />
-                    </div>
-                    <div class=" col-xs-8 text-center">
-                        <h3>SPORTS</h3>
-                    </div>
-                    <div class=" col-xs-2 text-right">
-                        <h3>25</h3>
-                    </div>
-                </div>
-                <div class="col-sm-offset-2 col-sm-8 media-question-column">
-
-                    <!------------------------------------------------->
-
-                    <!--<div style="margin-top:0px;">
-						<div id="box1">
-
-						<div class="panel panel-default  "style="">
-						<div class="panel-body text-center quiz-image margin-tb30" >
-
-						<h4>Who is this?</h4>
-						<img src="assets/images/profilepic.png"/>
 						</div>
+					</div>
+
+					<div class="col-xs-12 progress-header quiz-icon-box">
+						<div class=" col-xs-2 text-left ques-charcter-image">
+							<img src="assets/images/sport.png"/>
 						</div>
+						<div class=" col-xs-8 text-center">
+							<h3 class="nameOfCharacter text-uppercase">SPORTS</h3>
 						</div>
-
-						<div id="box2">
-
-						<div class="panel panel-default  "style="margin-top:-180px;">
-						<div class="panel-body text-center quiz-image margin-tb30" >
-
-						<h4>Who is this?</h4>
-						<img src="assets/images/profilepic.png"/>
+						<div class=" col-xs-2 text-right">
+							<h3 class="count-second">0</h3>
 						</div>
-						</div>
-						</div>
-
-						</div>-->
-                    <div class="question-box ">
-                        <div class="back-panel1"></div>
-                        <div class="back-panel2"></div>
-                        <div class="panel panel-default question ">
-                            <div class="panel-body text-center quiz-image margin-tb30">
-                                <h4>Who is this Who is this Who is this?</h4>
-                                <img src="assets/images/profilepic.png" />
-
-                            </div>
-                            <div class="pop-message">
-                                <div class="pop-message text-correct hide"></div>
-                                <div class="pop-message text-incorrect hide"></div>
-                                <div class="pop-message text-timeout hide"></div>
-                                <div class="pop-message text-try-again hide"></div>
-                            </div>
-
-                            <!--<div class="col-xs-6 col-xs-offset-3 marg-t-neg120"  >
-								<div class="ans  text-center " >
-								<h1>CORRECT</h1>
+					</div>
+					<div class="col-sm-offset-2 col-sm-8 media-question-column">
+						<div class="question-box ">
+							<div class="back-panel1"></div>
+							<div class="back-panel2"></div>
+							<div class="panel panel-default question " >
+								<div class="panel-body text-center quiz-image margin-tb30" >
+									<br />
+									<br />
+									<h4><b class="full-question"> Who is this Who is this Who is this? </b></h4>
 								</div>
-								<div class="ans-wrong  text-center">
-								<h1>INCORRECT</h1>
-								</div>
-								</div>
-								</div>
+								<div class="pop-message" >
+									<div class="pop-message text-correct hide"></div>
+									<div class="pop-message text-incorrect hide"></div>
+									<div class="pop-message text-timeout hide"></div>
+									<div class="pop-message text-try-again hide"></div>
 								</div>
 
-								<!------------------------------------------------->
-                        </div>
-                    </div>
-                    <!-- question box -->
-                </div>
-
-                <div class="col-sm-10 col-sm-offset-1 media-answer-box marg-b10">
-
-                    <div class="  text-center  move ">
-
-                        <br>
-                        <br>
-                        <br>
-
-                        <div class="col-sm-12  padding-zero margin-t5 quiz-btn-media ">
-                            <a id="correct" onclick="correctsound.playclip()" class="btn btn-answer btn-lg btn-block">correct answer correct answer</a>
-
-                        </div>
-                        <br>
-                        <br>
-
-
-                        <div class="col-sm-12   padding-zero margin-t5 quiz-btn-media">
-                            <a id="wrong" onclick="wrongsound.playclip()" class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
-                        </div>
-                        <br>
-                        <br>
-
-
-
-                        <div class="col-sm-12  padding-zero margin-t5 quiz-btn-media">
-                            <a id="wrong2" onclick="wrongsound.playclip()" class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
-                        </div>
-                        <br>
-                        <br>
-
-
-
-                        <div id="div1" class="slide col-xs-12  padding-zero margin-t5 quiz-btn-media">
-                            <a id="wrong3" onclick="wrongsound.playclip()" class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-                <!-- end of answers -->
-                <!-- for tablet and desktop -->
-                <!--<div id="myDiv" class="col-sm-8 col-sm-offset-2 hidden-xs margin-b20" style="display:none;">
-						<div class="col-xs-6 author padding-zero ">
-							<div class="col-xs-5 text-left padding-zero">
-								<img src="assets/images/profilepic.png"/>
 							</div>
-							<div class="col-xs-7 padding-zero text-left">
-								<h5 class="white">Tomi Yahani</h5>
-								<h6 class="white">Translator</h6>
-							</div>
+						</div><!-- question box -->
+					</div>
+
+					<div class="col-sm-10 col-sm-offset-1 media-answer-box marg-b10" >
+
+						<div class="text-center move">
+
+							<br>
+							<br>
+							<br>
+							<span class="question-option">
+								<div class="col-sm-12  padding-zero margin-t5 quiz-btn-media " >
+									<a id="correct" onclick="correctsound.playclip()" class="btn btn-answer btn-lg btn-block">correct answer correct answer</a>
+								</div>
+								<br>
+								<br>
+								<div class="col-sm-12   padding-zero margin-t5 quiz-btn-media">
+									<a id="wrong" onclick="wrongsound.playclip()"  class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
+								</div>
+								<br>
+								<br>
+								<div class="col-sm-12  padding-zero margin-t5 quiz-btn-media">
+									<a id="wrong2" onclick="wrongsound.playclip()" class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
+								</div>
+								<br>
+								<br>
+								<div id="div1" class="slide col-xs-12  padding-zero margin-t5 quiz-btn-media">
+									<a id="wrong3" onclick="wrongsound.playclip()" class="btn btn-answer btn-lg btn-block"> incorrect answer</a>
+								</div> </span>
+
 						</div>
 
-						<div class="col-xs-6 author padding-zero ">
-							<div class="col-xs-7 padding-zero text-right">
-								<h5 class="white">Tomi Yahani</h5>
-								<h6 class="white">Author</h6>
-							</div>
-							<div class="col-xs-5  text-right padding-zero">
-								<img src="assets/images/profilepic.png"/>
-							</div>
-						</div>
-					</div> -->
+					</div><!-- end of answers -->
 
-                <!--quiz footer -->
-                <div class="col-xs-12" id="quiz-footer"></div>
+					<!--quiz footer -->
+					<div class="col-xs-12" id="quiz-footer" style="position: absolute;bottom: -8px;width:100%"></div>
 
-                <!-- / quiz footer  -->
-                <br>
-                <br>
+					<!-- / quiz footer  -->
+					<br>
+					<br>
+					<br>
+					<br>
 
-            </div>
+				</div>
+			</div>
+		</div>
 
-            <!--<script>
-				$("#correct").click(function(){
-				// $("div.move").animate({left: '250px'});
-				$("div.ans").show();
+		<script>
+			var progress = 1;
+			var currentGameId = localStorage.getItem("currentGame");
 
+			function getQuestion() {
+
+				var nameOfCharacter = localStorage.getItem("currentWord");
+
+				$(".nameOfCharacter").html(nameOfCharacter);
+
+				var img = '';
+
+				if (nameOfCharacter == 'entertainment') {
+					img += " <img src='assets/images/character-1.png' style='margin-top:5px' /> ";
+
+				} else if (nameOfCharacter == 'art') {
+
+					img += " <img src='assets/images/character-2.png' style='margin-top:5px' /> ";
+
+				} else if (nameOfCharacter == 'sports') {
+
+					img += " <img src='assets/images/character-3.png' style='margin-top:5px'  /> ";
+
+				} else if (nameOfCharacter == 'history') {
+
+					img += " <img src='assets/images/character-4.png' style='margin-top:5px' /> ";
+
+				} else if (nameOfCharacter == 'science') {
+
+					img += " <img src='assets/images/character-5.png' style='margin-top:5px' /> ";
+
+				} else if (nameOfCharacter == 'geography') {
+
+					img += " <img src='assets/images/character-6.png' style='margin-top:5px' /> ";
+
+				} else if (nameOfCharacter == 'crown') {
+
+					img += " <img src='assets/images/icon-crown-meter-full.png' style='margin-top:5px'/> ";
+
+				}
+
+				$(".ques-charcter-image").html(img);
+
+				var question = Parse.Object.extend("Question");
+
+				var query = new Parse.Query(question);
+
+				query.find({
+
+					success : function(results) {
+
+						//Start question Timer function
+						startQuestionTimer();
+
+						var random_question_id = ((Math.random() * 10000) / 100);
+
+						var obj = $.parseJSON(JSON.stringify(results));
+
+						$(".full-question").html(obj[parseInt(random_question_id)].text);
+						localStorage.setItem("currentQuestion", obj[parseInt(random_question_id)].text);
+
+						var optionStr = '';
+
+						var correctAnswerId = obj[parseInt(random_question_id)].correctAnswerId;
+
+						for (var i = 1; i <= 4; i++) {
+
+							var options = '';
+							if (i == 1) {
+								options = obj[parseInt(random_question_id)].answer1;
+							} else if (i == 2) {
+								options = obj[parseInt(random_question_id)].answer2;
+							} else if (i == 3) {
+								options = obj[parseInt(random_question_id)].answer3;
+							} else {
+								options = obj[parseInt(random_question_id)].answer4;
+							}
+
+							if (correctAnswerId == (i - 0)) {
+
+								optionStr += "<div class='col-sm-12 padding-zero margin-t5 quiz-btn-media correct-option' style='border : 1px solid red;'>";
+								optionStr += "<a onclick='correctsound.playclip()' class='btn btn-answer btn-lg btn-block'>" + options + "</a>";
+								optionStr += "</div>";
+								optionStr += "<br><br>";
+
+							} else {
+
+								optionStr += "<div class='col-sm-12 padding-zero margin-t5 quiz-btn-media wrong-option'>";
+								optionStr += "<a onclick='wrongsound.playclip()' class='btn btn-answer btn-lg btn-block'> " + options + " </a>";
+								optionStr += "</div>";
+								optionStr += "<br><br>";
+
+							}
+
+						}
+						$(".question-option").html(optionStr);
+
+					},
+					error : function(error) {
+						console.log("Query Error := " + error.message);
+					}
 				});
 
-				$("#wrong").click(function(){
-				$("div.ans-wrong").show();
+			}
+
+			//progress bar with question timer
+			function startQuestionTimer() {
+				//console.log("progress :=" + progress);
+
+				if (progress < 30) {
+
+					setTimeout(function() {
+
+						progress++;
+						$(".count-second").html(30 - progress);
+
+						$(".question-progress-width").css("width", (progress * 3.4) + "%");
+
+						if (progress > 20) {
+
+							$(".count-second").animate({
+								"font-size" : "1px"
+							}, 500);
+							$(".count-second").animate({
+								"font-size" : "24px"
+							}, 500);
+
+						}
+
+						if (progress == 30) {
+
+							setTimeout(function() {
+
+								$("div.text-timeout").removeClass('hide');
+
+								$('.correct-option').find("a").removeClass("btn-answer").addClass('btn-olive');
+
+								var div1,
+								    div2,
+								    div3,
+								    div4;
+
+								div1 = $('.quiz-btn-media:nth-child(1n)');
+
+								setTimeout(function() {
+
+									div1.animate({
+										width : '-700px',
+										opacity : '0'
+									}, "slow");
+
+								}, 100);
+
+								div2 = $('.quiz-btn-media:nth-child(2n)');
+
+								setTimeout(function() {
+
+									div2.animate({
+										width : '-700px',
+										opacity : '0'
+									}, "slow");
+
+								}, 100);
+
+								div3 = $('.quiz-btn-media:nth-child(3n)');
+
+								setTimeout(function() {
+
+									div3.animate({
+										width : '-700px',
+										opacity : '0'
+									}, "slow");
+
+								}, 100);
+
+								div4 = $('.quiz-btn-media:nth-child(4n)');
+
+								setTimeout(function() {
+
+									div4.animate({
+										width : '-700px',
+										opacity : '0'
+									}, "slow");
+								}, 100);
+
+								setTimeout(function() {
+									$("div.text-timeout").addClass('hide');
+								}, 5000);
+
+								//Add question status
+								addGameStatus("their turn");
+
+							}, 1000);
+
+						}
+
+						startQuestionTimer();
+
+					}, 1000);
+
+				} else {
+
+				}
+
+			}
+
+			//check game status right ,wrong answer of question
+			function addGameStatus(str) {
+
+				var GamePlayers = Parse.Object.extend("GamePlayers");
+				var query = new Parse.Query(GamePlayers);
+
+				query.equalTo("gameId", currentGameId);
+				query.equalTo("playerId", Parse.User.current().id);
+
+				query.first({
+
+					success : function(object) {
+
+						object.set("gameStatus", str);
+						object.set("currectAnswer", 0);
+						object.set("gameRound", (object.attributes.gameRound + 1));
+
+						object.save();
+
+						localStorage.setItem("answer", "wrong");
+
+						setTimeout(function() {
+							window.location = "view/sports-next-page.html";
+						}, 1000);
+
+					},
+					error : function(error) {
+
+						failResponse(error.message);
+
+					}
 				});
-				</script>-->
-            <script>
-                $(document).ready(function() {
-                    $("#correct").click(function() {
-                        //$("div.text-correct").show();
-                        //$("this").addClass('btn-olive');
-                        $("div.text-correct").removeClass('hide');
-                        $('#correct').addClass('btn-olive');
-                        var div = $("div.move");
-                        div.animate({
+			}
 
-                            width: '-700px',
-                            opacity: '0'
-                        }, "slow");
+			var quescharcterimage = '';
+			var nameOfCharacter = '';
+			var fullquestion = '';
 
-                        setTimeout(function() {
-                            window.location = "view/sports-next-page.html";
-                        }, 600);
+			//CORRECT
+			$(document).on('click', '.correct-option', function() {
 
-                    });
+				quescharcterimage = $(".ques-charcter-image").html();
+				nameOfCharacter = $(".nameOfCharacter").html();
+				fullquestion = $(".full-question").html();
 
-                    $("#wrong,#wrong2,#wrong3").click(function() {
-                        //$("div.ans-wrong").show();
-                        $("div.text-incorrect").removeClass('hide');
-                        var div = $("div.move");
-                        div.animate({
-                            width: '-700px',
-                            opacity: '0'
-                        }, "slow");
-                        setTimeout(function() {
-                            window.location = "view/sports-next-page.html";
-                        }, 600);
-                    });
-                });
-            </script>
+				//$("div.text-correct").show();
+				//$("this").addClass('btn-olive');
+				$("div.text-correct").removeClass('hide');
+				$('.correct-option').find("a").removeClass("btn-answer").addClass('btn-olive');
+				//$('#correct').addClass('btn-olive');
+				var div = $("div.move");
+				div.animate({
+					width : '-700px',
+					opacity : '0'
+				}, "slow");
 
-</body>
+				//Add question status
+				var GamePlayers = Parse.Object.extend("GamePlayers");
+				var query = new Parse.Query(GamePlayers);
+
+				query.equalTo("gameId", currentGameId);
+				query.equalTo("playerId", Parse.User.current().id);
+
+				query.first({
+
+					success : function(object) {
+
+						object.set("gameStatus", 'new game');
+						object.set("gameScore", (object.attributes.gameScore + 1));
+
+						if (object.attributes.currectAnswer == 3) {
+
+							object.set("currectAnswer", 0);
+							//alert("ch_"+localStorage.getItem("selectcharacter"));
+							object.set(localStorage.getItem("selectcharacter"), true);
+
+							localStorage.removeItem("answer")
+
+						} else if (object.attributes.currectAnswer) {
+
+							object.set("currectAnswer", (object.attributes.currectAnswer + 1));
+
+						} else {
+
+							object.set("currectAnswer", 1);
+
+						}
+
+						localStorage.setItem("answer", "correct");
+
+						object.save();
+
+						window.location = "view/sports-next-page.html";
+
+					},
+					error : function(error) {
+
+						failResponse(error.message);
+
+					}
+				});
+
+			});
+
+			//WRONG
+			$(document).on('click', '.wrong-option', function() {
+
+				quescharcterimage = $(".ques-charcter-image").html();
+				nameOfCharacter = $(".nameOfCharacter").html();
+				fullquestion = $(".full-question").html();
+
+				//$("div.ans-wrong").show();
+				$("div.text-incorrect").removeClass('hide');
+				var div = $("div.move");
+				div.animate({
+					width : '-700px',
+					opacity : '0'
+				}, "slow");
+
+				//Add question status
+				addGameStatus("their turn");
+
+			});
+
+			//on document ready
+
+			$(function() {
+
+				getQuestion();
+
+			});
+		</script>
+
+		<style>
+			.question-progress-width {
+				-webkit-transition: width 3s ease !important;
+				-moz-transition: width 3s ease !important;
+				-o-transition: width 3s ease !important;
+				transition: width 3s ease !important;
+			}
+		</style>
+
+	</body>
 
 </html>

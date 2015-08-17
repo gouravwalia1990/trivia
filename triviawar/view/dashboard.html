@@ -35,6 +35,10 @@
 	</head>
 
 	<body class="noJS" id="example-1">
+
+		<!-- div for ajax response -->
+		<div id="responseDiv"></div>
+
 		<div class="container container1">
 			<div class="container-960 ">
 				<div class="row box3 turnPage-layout padding-zero">
@@ -55,11 +59,7 @@
 											<div class="col-xs-6 padding-all-zero">
 												<span class="currentlives" style="position: absolute;left: 5px;">3</span>
 												<img class="heart-height" src="assets/images/heart.svg" />
-											</div>
-											<span class="text-center media-life">
-												<span class="gameLifeLineTime"> Full </span>
-											</span> 
-										</a>
+											</div> <span class="text-center media-life"> <span class="gameLifeLineTime"> Full </span> </span> </a>
 										</div>
 										<div class="col-xs-4 padding-zero ">
 											<a href="#" onclick="clicksound.playclip()" class="borderlr border-curve btn btn-black btn-block pad-tb-zero "><img class="spin-dude-width" src="assets/images/spin-dude.png" />&nbsp;4</a>
@@ -845,7 +845,76 @@
 
 		<!-- shop modal -->
 		<script>
+			function checkGame() {
+
+				var Game = Parse.Object.extend("Game");
+				var query = new Parse.Query(Game);
+
+				query.equalTo("playersCount", 1);
+
+				query.first({
+
+					success : function(object) {
+
+						object.set("playersCount", 2);
+
+						var gameId = object.id;
+
+						object.save();
+
+						var GamePlayers = Parse.Object.extend("GamePlayers");
+						var query1 = new Parse.Query(GamePlayers);
+
+						query1.equalTo("gameId", gameId);
+
+						query1.first({
+
+							success : function(object) {
+
+								var GamePlayers = Parse.Object.extend("GamePlayers");
+								var query2 = new Parse.Query(GamePlayers);
+
+								query2.set("gameId", gameId);
+								query2.set("playerId", localStorage.getItem("currentUserId"));
+								query2.set("gameScore", 1);
+								query2.set("playerType", 'opponent');
+								query2.set("gameRound", 1);
+								query2.set("gameStatus", "your turn");
+
+								query2.save({
+									success : function() {
+										alert("sucess");
+									},
+									error : function(error) {
+										alert("error");
+										failResponse(error.message);
+									}
+								});
+
+							},
+							error : function(error) {
+
+								failResponse(error.message);
+
+							}
+						});
+
+						//alert("object Id :="+object.id);
+
+					},
+					error : function(error) {
+
+						failResponse(error.message);
+
+					}
+				});
+
+			}
+
+
 			$(document).ready(function() {
+
+				checkGame();
 
 				$(window).load(function() {
 
