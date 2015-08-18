@@ -1,88 +1,3 @@
-$(function() {
-	Parse.initialize("YKhgseVvbcmoXniYoMbUp32y9aZONzwuOxFqSdDF", "RYW7xS5OxeB2XvNy8q39fMWmOxHg0Msm2eAKcHRm");
-});
-
-//check page name
-var path = window.location.pathname;
-var page = path.split("/").pop();
-
-/*************** Redirect  ***************/
-function redirectTo(form, pageID) {
-
-	var pageValid = $("#" + pageID).valid();
-
-	//alert("pageID :=" + pageID + "pageValid := " + pageValid);
-	if (pageValid) {
-
-		switch(pageID) {
-
-		case "signupForm":
-			signup();
-			break;
-
-		case "signinForm":
-			signin();
-			break;
-
-		case "emailForm":
-			verifyEmail();
-			break;
-
-		default:
-			//checkUserType();
-			break;
-
-		}
-
-		return false;
-	}
-
-}
-
-function redirectTo2(redirectString) {
-
-	setTimeout(function() {
-
-		switch(redirectString) {
-
-		case "login":
-			window.location = "view/login.html";
-			break;
-
-		case "verifyemail":
-			window.location = "view/verifyEmail.html";
-			break;
-
-		case "signup":
-			window.location = "view/signup.html";
-			break;
-
-		case "pasword-recovery":
-			window.location = "view/password-recovery.html";
-			break;
-
-		case "dashboard":
-			window.location = "view/dashboard.html";
-			break;
-
-		case "index":
-			window.location = "view/index.html";
-			break;
-
-		case "spin":
-			window.location = "view/spin.html";
-			break;
-
-		case "newGame":
-			checkGameLifeLine("decrement");
-			break;
-
-		}
-
-	}, 300);
-
-}
-
 /*************** check page  ***************/
 $(document).ready(function() {
 
@@ -107,12 +22,19 @@ $(document).ready(function() {
 
 		setTimeout(function() {
 
-			setUserProfile();
-
 			setUserDashboard();
 
-		}, 50);
+		}, 200);
 
+	}
+	
+
+	var currentUser = Parse.User.current();
+	if (currentUser) {
+
+		setTimeout(function() {
+			setUserProfile();
+		}, 200);
 	}
 
 });
@@ -127,7 +49,9 @@ function checkUserSession() {
 		window.location = "view/dashboard.html";
 
 	} else {
+		
 		Parse.User.logOut();
+		
 	}
 }
 
@@ -164,9 +88,10 @@ function checkGameLifeLine(str) {
 
 				object.set("currentlives", currentlives1);
 
-				//alert("d :="+d);
+				if (str == 'decrement' && ((currentlives1 + 1) == 3)) {
 
-				object.set("resetLifeTimer", d);
+					object.set("resetLifeTimer", d);
+				}
 
 				object.save();
 
@@ -189,7 +114,7 @@ function checkGameLifeLine(str) {
 		});
 
 	} else {
-		
+
 		failResponse("Your game lifeline is 0");
 
 	}
@@ -197,6 +122,7 @@ function checkGameLifeLine(str) {
 
 /****************************** set User Dashboard ***************************/
 var date1;
+
 function setUserDashboard() {
 
 	var User = Parse.Object.extend("User");
@@ -212,7 +138,11 @@ function setUserDashboard() {
 
 					if (results[i].get("currentlives") < 3) {
 
+						console.log("resetLifeTimer := " + results[i].get("resetLifeTimer"));
+
 						date1 = new Date(results[i].get("resetLifeTimer"));
+
+						console.log("date1 := " + date1);
 
 						dispLifeCounter();
 					}
@@ -237,17 +167,30 @@ function dispLifeCounter() {
 
 		var date2 = new Date();
 
-		var timeDiff = date2.getTime() - date1.getTime();
+		var date1_ms = date1.getTime();
+		var date2_ms = date2.getTime();
 
-		var diffDays = (timeDiff / 60000).toString();
+		var difference_ms = date2_ms - date1_ms;
 
-		if ((60 - ( (parseFloat(diffDays)).toFixed(2)) ).toFixed(2) <= 0) {
+		//take out milliseconds
+		difference_ms = difference_ms / 1000;
+		var seconds = Math.floor(difference_ms % 60);
+		difference_ms = difference_ms / 60;
+		var minutes = Math.floor(difference_ms % 60);
+		difference_ms = difference_ms / 60;
+		var hours = Math.floor(difference_ms % 24);
+		var days = Math.floor(difference_ms / 24);
+
+		console.log(days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, and ' + seconds + ' seconds');
+
+		if ((60 - minutes) <= 0) {
 
 			checkGameLifeLine("increament");
 
 		} else {
 
-			$(".gameLifeLineTime").html((60 - ( (parseFloat(diffDays)).toFixed(2)) ).toFixed(2));
+			$(".gameLifeLineTime").html(("0" + (59 - minutes)).slice(-2) + " : " + ("0" + (59 - seconds)).slice(-2));
+			//console.log(60 - difference_ms);
 			dispLifeCounter();
 		}
 
@@ -306,6 +249,8 @@ function signup() {
 			$(".signupProgressBar").addClass("hide");
 
 			successResponse("signup success");
+			
+			localStorage.setItem("currentUserId",user.id);
 
 			setTimeout(function() {
 				window.location = "view/dashboard.html";
@@ -333,7 +278,9 @@ function signin() {
 
 	Parse.User.logIn(name, pass, {
 		success : function(user) {
-
+			
+			localStorage.setItem("currentUserId",user.id);
+			
 			$(".signinProgressBar").addClass("hide");
 
 			successResponse("login success");
@@ -345,7 +292,6 @@ function signin() {
 		},
 		error : function(user, error) {
 			console.log("LogIn error := " + error.message);
-
 			$(".signinProgressBar").addClass("hide");
 
 			failResponse(error.message);

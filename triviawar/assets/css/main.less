@@ -153,6 +153,12 @@
          text-decoration: none !important;
      }
  }
+ 
+ .border-radius-bot20{
+     border-bottom-right-radius: 20px !important;
+   
+     border-bottom-left-radius:20px !important;
+ }
  .forgot {
      a {
          h4 {
@@ -734,6 +740,120 @@
  /*------------ dashboard.html  and my-profile.html ---------------------*/
  /*---  ------       dashboard .html   --- --*/
 /*-- modal style for shop --*/
+
+.shop-scroll{
+  height:550px;
+  overflow-y:scroll;
+  .well {
+  background-color:#d0d0d0;
+  border: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius:none !important;
+  
+  .well-shop{
+  border-radius:none !important;
+  }
+}  
+}
+
+.shop-height{
+  height:700px;
+}
+
+.marg-tneg30{
+  margin-top:-30px;
+}
+
+
+
+
+
+
+.well-shop-main{
+  height:800px;
+ background-image:url("../images/shelf-bg.png");}
+
+
+
+.shop-main{
+  margin-top:100px;
+  background: url("../images/shelf-bg.png") ;
+}
+
+
+.modal-content { 
+  border-radius: 20px !important;
+}
+.modal-shop{
+  max-width:440px !important;
+  .modal-content{
+     position: relative;
+     background-color: #1fbba6; 
+    border: 1px solid gray;
+     border-radius: 20px;
+     
+  }
+  }
+  
+.well-shop{    
+  height:90px;
+  margin-bottom:0;
+  }
+  
+
+.status-container{
+  max-width:260px;
+  margin:0 auto;
+  .panel{
+    
+       background-color:#f1f1f1 !important;
+       border: 3px solid #e3e3e3 !important;
+       border-radius: 6px!important;
+       margin-top:10px;    
+        .panel-body{.padding(0);}
+         }
+  }
+
+.gems {
+ 
+  .padding_leftright(0) !important;
+  border-right:1px solid white;
+  span{
+  font-size:18px;
+  font-weight:900;
+  color:#bebebe;
+  img{ width:30px;height:35px;margin-right:5px;}
+}
+}
+
+
+
+.spin 
+{ border-right:1px solid white;
+  .padding_leftright(0) !important;
+  span{
+  font-size:18px;
+  font-weight:900;
+  color:#bebebe;
+  img{ width:26px;height:35px;margin-right:5px;}
+}
+}
+
+
+.coin 
+{
+  .padding_leftright(0) !important;
+  span{
+  font-size:18px;
+  font-weight:900;
+  color:#bebebe;
+  img{ width:26px;height:35px;margin-right:5px;}
+}
+}
+
+
+
 .awning-layout{
  position: absolute;
   margin-top:10px;
@@ -745,15 +865,165 @@
   z-index:9;}
 
 
-.well{
-  background-color:#d0d0d0;
-}
+
 .shop-heading{font-size:26px !important;font-weight:900 !important;}
-.shop-layout{
-  background:  repeat-x;
+
+
+
+
+.shop-images{
+    display: block;
+  width: 100%;
+  height: 85px;
+  background-size: 100%;
+  @media @mobile{height:40px;}
+}
+.shop-images2{
+    display: block;
+  width: 70%;
+  margin:0 auto;
+  height:90px;
+  background-size: 100%;
+  @media @mobile{height:40px;}
+}
+.shop-images3{
+    display: block;
+  width: 50%;
+  margin:0 auto;
+  height: 75px;
+  background-size: 100%;
+  @media @mobile{height:40px;}
+}
+.discount-badge3{
+  background-image:url("../images/icon-badge.svg") ;
+  height: 54px;
+  position: absolute;  
+  right: 20px;
+  top: -20px;
+  width: 52px;
+  span{
+    font-weight:900 !important;
+    font-size:20px ;
+    color:white !important;}
+   @media @mobile{height:40px;}}
+   
+.discount-badge2{
+  background-image:url("../images/icon-badge.svg") ;
+  height: 54px;
+  position: absolute;  
+  right: 20px;
+  top: 10px;
+  width: 52px;
+  span{
+    font-weight:900 !important;
+    font-size:20px ;
+    color:white !important;}
+   @media @mobile{height:40px;}}
+  
+.gems20{
+  background-image:url("../images/gems-x20.png");
+}
+.gems15{
+  background-image:url("../images/gems-x15.png");
+}
+.gems10{
+  background-image:url("../images/gems-x10.png");
+}
+.gems5{
+  background-image:url("../images/gems-x5.png");
+}
+.gems3{
+  background-image:url("../images/gems-x3.png");
+}
+.coin-coffer{
+  background-image:url("../images/icon-coins-coffer.png");
+}
+.coin-bag{
+  background-image:url("../images/icon-coins-bag.png");
+}
+.coin-team{
+  background-image:url("../images/icon-happy-coin-team.png");
+  width: 60%;
+  height: 80px;
+  margin-top:0px; 
+   margin-left:10px;
 }
 
+.coin-duo{
+  background-image:url("../images/icon-happy-coin-duo.png");
+     display: block;
+  width: 70%;
+  height: 50px;
+  background-size: 100%;
+  margin-top:30px;
+   margin-left:20px;
+}
+.coin-single{
+  background-image:url("../images/icon-happy-coin.png");
+    display: block;
+  width: 40%;
+  height: 60px;
+  background-size: 100%;
+  margin-top:20px ;
+   margin-left:20px;
+}
+.discount-badge4{
+  background-image:url("../images/icon-badge.svg") ;
+ 
+  position: absolute;  
+ height: 54px;
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  width: 52px;   
+  span{
+    font-weight:900 !important;
+    font-size:20px ;
+    color:white !important;}
+   @media @mobile{height:40px;}
+}
+.discount-badge{
+  background-image:url("../images/icon-badge.svg") ;
+  height: 54px;
+  position: absolute;  
+  right: -1px;
+  top: -15px;
+  width: 52px;   
+  span{
+    font-weight:900 !important;
+    font-size:20px ;
+    color:white !important;}
+   @media @mobile{height:40px;}
+}
+.spin-team{
+  background-image:url("../images/icon-spin-team.png");
+ width: 65%;
+}
+.spin-duo{
+  background-image:url("../images/icon-spin-duo.png");
+     display: block;
+  width: 60%;
+  height: 50px;
+  background-size: 100%;
+  margin-top:35px;
+   margin-left:20px;
+}
+.spin-single{
+  background-image:url("../images/spin-dude.png");
+    display: block;
+  width: 40%;
+  height: 60px;
+  background-size: 100%;
+  margin-top:25px ;
+  margin-left:20px;
+}
 
+ .shop-item-name h3 {
+  font-size: 14px !important;
+  color: #858585;
+  margin-top:0; 
+  
+}
 
 
 
@@ -853,6 +1123,13 @@
      }
  }
  /*----------*/
+
+.currentlives{position: absolute;left: 0px;}
+ @media only screen and (min-width: 480px) and (max-width: 768px){
+   .currentlives{left: 12px;}
+ }
+ 
+.marg-t200{margin-top:200px;}
  
  .spin-dude-width {
      width: 30px;
@@ -861,6 +1138,12 @@
  .coin-height {
      .margin_topbottom(5px);
  }
+ 
+ @media only screen and (max-width: 767px){
+.heart-height {
+  margin-left: -9px !important;
+}
+}
  .heart-height {
      margin-left: -55px;
      .margin_topbottom(0);
@@ -906,11 +1189,17 @@
          font-weight: 900 !important;
      }
  }
+ 
+ @media only screen and (max-width: 767px){
+.btn-black {
+ font-size: 31px !important;
+}
+ }
  .btn-black {
      background-color: #121212;
      .colorAndHover(white, white);
      max-height: 47px;
-     font-size: 30px;
+     font-size: 31px;
      font-weight: 900;
      @media @mobile {
          font-size: 20px;
@@ -951,6 +1240,10 @@
  }
  .border-aqua {
      border: 4px solid @profileBlue;
+     
+     border-bottom-right-radius: 20px;
+    
+     border-bottom-left-radius:20px;
  }
  .heading-style {
      padding: 0;
@@ -1136,7 +1429,7 @@
      }
  }
  /* ---- scrollbar css ------*/
- /*::-webkit-scrollbar {
+ ::-webkit-scrollbar {
      width: 15px;
      @media @mobile,
      {
@@ -1157,8 +1450,39 @@
      -webkit-box-shadow: inset 0 0 6px rgba(243, 243, 237, 1);
  }
  
+ ::-moz-scrollbar {
+     width: 15px;
+     @media @mobile,
+     {
+         width: 10px;
+     }
+     @media @tablet {
+         width: 10px;
+     }
+ }
+ ::-moz-scrollbar-track {
+     -webkit-box-shadow: inset 10px 10px 6px rgba(0, 0, 0, 0.3);
+     border-radius: 10px;
+     background-color: #b0b0b0;
+ }
+ ::-moz-scrollbar-thumb {
+     border-radius: 10px;
+     background-color: white;
+     -webkit-box-shadow: inset 0 0 6px rgba(243, 243, 237, 1);
+ }
  
- */
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*-----------------scrollbar --------------*/
  
  .height55 {
      height: 55px;
@@ -1172,9 +1496,10 @@
  }
  .modal-content {
      position: relative;
-     background-color: #1fbba6;
-     border: 1px solid gray;
-     border-radius: 10px;
+     /* background-color: #1fbba6; */
+    /* border: 1px solid gray;*/
+     border-radius: 20px;
+     /*padding-bottom: 15px;*/
  }
  .margin-media {
      @media @768-800 {
@@ -1925,7 +2250,7 @@
          padding-right: 0;
      }
  }
- .eidt-modal-scroll {
+ .edit-modal-scroll {
      height: 470px;
      overflow: auto;
  }
@@ -1991,6 +2316,7 @@
          .nation-box {
            z-index:999999 !important;
             height: 80px !important;  
+            overflow-y:scroll;
          ul {
              list-style: none;
              padding-left: 0;
@@ -2011,7 +2337,8 @@
              }
          }
      }
- }}
+   }
+ }
  
  
  .nation-title {

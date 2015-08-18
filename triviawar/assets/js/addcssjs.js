@@ -1,6 +1,6 @@
-
 $(function() {
 	$("#header").load("view/my-profile.html");
+	$("#responseDiv").load("view/response.html");
 	$("#quiz-footer").load("view/quiz-page-powers.html");
 
 });
@@ -90,13 +90,105 @@ loadjscssfile("assets/js/validation.js", "js");
 
 loadjscssfile("assets/js/script.js", "js");
 
+loadjscssfile("assets/js/game.js", "js");
+
 //loadjscssfile("assets/js/howler.min.js", "js");
 
 loadjscssfile("assets/js/spin.js", "js");
+
+loadjscssfile("assets/js/jquery.custom-scrollbar.js", "js");
 
 loadjscssfile("assets/js/custom-scrollbar-js/jquery.mCustomScrollbar.concat.min.js", "js");
 
 loadjscssfile("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css", "css");
 
 loadjscssfile("assets/css/jquery.mCustomScrollbar.css", "css");
+
+loadjscssfile("assets/css/jquery.custom-scrollbar.css", "css");
+
+$(function() {
+	Parse.initialize("YKhgseVvbcmoXniYoMbUp32y9aZONzwuOxFqSdDF", "RYW7xS5OxeB2XvNy8q39fMWmOxHg0Msm2eAKcHRm");
+});
+
+//check page name
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
+/*************** Redirect  ***************/
+function redirectTo(form, pageID) {
+
+	var pageValid = $("#" + pageID).valid();
+
+	//alert("pageID :=" + pageID + "pageValid := " + pageValid);
+	if (pageValid) {
+
+		switch(pageID) {
+
+		case "signupForm":
+			signup();
+			break;
+
+		case "signinForm":
+			signin();
+			break;
+
+		case "emailForm":
+			verifyEmail();
+			break;
+
+		default:
+			//checkUserType();
+			break;
+
+		}
+
+		return false;
+	}
+
+}
+
+function redirectTo2(redirectString) {
+
+	setTimeout(function() {
+
+		switch(redirectString) {
+
+		case "login":
+			window.location = "view/login.html";
+			break;
+
+		case "verifyemail":
+			window.location = "view/verifyEmail.html";
+			break;
+
+		case "signup":
+			window.location = "view/signup.html";
+			break;
+
+		case "pasword-recovery":
+			window.location = "view/password-recovery.html";
+			break;
+
+		case "dashboard":
+			window.location = "view/dashboard.html";
+			break;
+
+		case "index":
+			window.location = "view/index.html";
+			break;
+
+		case "playNewGame":
+			playGame();
+			//window.location = "view/spin.html";
+			break;
+
+		case "newGame":
+			checkGameLifeLine("decrement");
+			break;
+
+		}
+
+	}, 300);
+
+}
 
